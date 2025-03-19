@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Sentiment Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .sentiment-column {
+            width: 150px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .positive {
+            color: green;
+        }
+        .neutral {
+            color: orange;
+        }
+        .negative {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Sentiment Dashboard</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Sentiment</th>
+            <th>Confidence</th>
+        </tr>
+        {% for article in news %}
+        <tr>
+            <td>{{ article.title }}</td>
+            <td>
+                {% if article.date %}
+                    {{ article.date.strftime('%Y-%m-%d %H:%M:%S') if article.date is not string else article.date }}
+                {% else %}
+                    No date available
+                {% endif %}
+            </td>
+                <td class="sentiment-column {% if article.sentiment %}
+                {% if article.sentiment['Pos'] > article.sentiment['Neu'] and article.sentiment['Pos'] > article.sentiment['Neg'] %}positive
+                {% elif article.sentiment['Neu'] > article.sentiment['Pos'] and article.sentiment['Neu'] > article.sentiment['Neg'] %}neutral
+                {% else %}negative{% endif %}{% endif %}">
+                {% if article.sentiment %}
+                    {% if article.sentiment['Pos'] > article.sentiment['Neu'] and article.sentiment['Pos'] > article.sentiment['Neg'] %}Positive
+                    {% elif article.sentiment['Neu'] > article.sentiment['Pos'] and article.sentiment['Neu'] > article.sentiment['Neg'] %}Neutral
+                    {% else %}Negative{% endif %}
+                {% else %}
+                    Not Classified
+                {% endif %}
+            </td>
+            <td class="sentiment-column">
+                {% if article.sentiment %}
+                    {% if article.sentiment['Pos'] > article.sentiment['Neu'] and article.sentiment['Pos'] > article.sentiment['Neg'] %}{{ (article.sentiment['Pos'] * 100) | round(2) }}%
+                    {% elif article.sentiment['Neu'] > article.sentiment['Pos'] and article.sentiment['Neu'] > article.sentiment['Neg'] %}{{ (article.sentiment['Neu'] * 100) | round(2) }}%
+                    {% else %}{{ (article.sentiment['Neg'] * 100) | round(2) }}%{% endif %}
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
