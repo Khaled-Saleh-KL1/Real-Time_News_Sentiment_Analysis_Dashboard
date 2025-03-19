@@ -48,12 +48,19 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 
 ### Dependencies
 flask==2.0.1
+
 kafka-python==2.0.6
+
 pymongo==4.0.1
+
 requests==2.26.0
+
 schedule==1.1.0
+
 torch==1.10.0
+
 transformers==4.11.3
+
 tensorflow>=2.0.0
 
 ### Installation
