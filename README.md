@@ -11,6 +11,7 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 - Distributed Architecture: Uses Kafka for message streaming between components
 
 ### System Architecture
+```
                 ┌───────────┐
                 │  NewsAPI  │
                 └─────┬─────┘
@@ -37,6 +38,7 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 │    Flask    │
 │  Dashboard  │
 └─────────────┘
+```
 
 ### Requirements
 - Python 3.8+
@@ -101,4 +103,5 @@ This will:
 
 ### Authors
 Khaled Saleh
+
 [Mohanad Assaf](https://github.com/kabuto1012)
