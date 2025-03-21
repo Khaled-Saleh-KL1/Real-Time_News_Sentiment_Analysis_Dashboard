@@ -10,6 +10,8 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 - Web Dashboard: Presents the analyzed news with sentiment indicators (Positive, Neutral, Negative)
 - Distributed Architecture: Uses Kafka for message streaming between components
 
+https://github.com/user-attachments/assets/e1e72429-d71d-4512-883c-f9dab9b3fe8d
+
 ### System Architecture
 ```
                 ┌───────────┐
@@ -105,6 +107,3 @@ This will:
 Khaled Saleh
 
 [Mohanad Assaf](https://github.com/kabuto1012)
-
-https://github.com/user-attachments/assets/e1e72429-d71d-4512-883c-f9dab9b3fe8d
-
