@@ -33,7 +33,7 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 │(classified) │    │  Consumer   │    │  Analyzer   │
 └──────┬──────┘    └─────────────┘    └─────────────┘
        │
-        ▼
+       ▼
 ┌─────────────┐
 │    Flask    │
 │  Dashboard  │
@@ -47,21 +47,14 @@ This project is a real-time financial news aggregator and sentiment analysis sys
 - NewsAPI account and API key
 
 ### Dependencies
-flask==2.0.1
-
-kafka-python==2.0.6
-
-pymongo==4.0.1
-
-requests==2.26.0
-
-schedule==1.1.0
-
-torch==1.10.0
-
-transformers==4.11.3
-
-tensorflow>=2.0.0
+- flask==2.0.1
+- kafka-python==2.0.6
+- pymongo==4.0.1
+- requests==2.26.0
+- schedule==1.1.0
+- torch==1.10.0
+- transformers==4.11.3
+- tensorflow>=2.0.0
 
 ### Installation
 1. Clone the repository:
@@ -112,3 +105,6 @@ This will:
 Khaled Saleh
 
 [Mohanad Assaf](https://github.com/kabuto1012)
+
+https://github.com/user-attachments/assets/e1e72429-d71d-4512-883c-f9dab9b3fe8d
+
